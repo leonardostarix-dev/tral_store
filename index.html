@@ -1,33 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>TRAL STORE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+<meta charset="UTF-8">
+<title>TRAL STORE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
 
-  <body>
-    <header>
-      <h1>TRAL STORE</h1>
-      <div class="cart-icon" onclick="toggleCart()">
-        🛒 <span id="cart-count">0</span>
-      </div>
-    </header>
+<body>
 
-    <section class="carousel-container">
-      <button class="nav" onclick="scrollCarousel(-1)">❮</button>
-      <div class="carousel" id="product-list"></div>
-      <button class="nav" onclick="scrollCarousel(1)">❯</button>
-    </section>
+<header>
+  <h1>TRAL STORE</h1>
+  <div class="cart-icon" onclick="toggleCart()">
+    🛒 <span id="cart-count">0</span>
+  </div>
+</header>
 
-    <div class="cart" id="cart">
-      <h2>Seu Carrinho</h2>
-      <div id="cart-items"></div>
-      <p>Total: R$ <span id="cart-total">0.00</span></p>
-      <button onclick="finalizarCompra()">Finalizar Compra</button>
-    </div>
+<section class="carousel-container">
+  <button class="nav" onclick="scrollCarousel(-1)">❮</button>
+  <div class="carousel" id="product-list">
+    <div class="loading">Carregando produtos...</div>
+  </div>
+  <button class="nav" onclick="scrollCarousel(1)">❯</button>
+</section>
 
-    <script src="script.js"></script>
-  </body>
+<div class="cart" id="cart">
+  <div class="cart-header">
+    <h2>Carrinho</h2>
+    <button class="close-cart" onclick="toggleCart()">✕</button>
+  </div>
+
+  <div id="cart-items"></div>
+
+  <div class="cart-footer">
+    <p>Total: R$ <span id="cart-total">0.00</span></p>
+    <button onclick="finalizarCompra()">Finalizar Compra</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>
